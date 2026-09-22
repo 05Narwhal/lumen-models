@@ -31,6 +31,25 @@ This repository contains no code: just this README and the release files.
 - **SHA-256:** 8ce9ac22967ff53551f5f319ff11c2e442fc5c9b372205c13f3ff786b56c998c · 9,274,894 bytes.
 - **Verdict (2026-09-22):** shipped. ONNX output matches PyTorch within 2.2e-6 on the reference signal.
 
+## clip-vit-b32-text-fp16.onnx — `clip-vit-b32-text-fp16@1` (Phase 7b)
+
+- **What:** the text tower of the same OpenAI CLIP ViT-B/32, fp16, with end-of-text pooling by a float argmax (ONNX Runtime's CPU ArgMax has no int64 kernel; identical to `encode_text`).
+- **Licence:** MIT (OpenAI CLIP). **SHA-256:** b879d9e2ee5364962a5782cc7ddd5c49590ef5689f460835536487c4aac18025 · 127,465,976 bytes.
+- **Used for:** natural-language search, and the `tag:*` scene prototypes (embedded offline).
+
+## clip-tokenizer.json — `clip-tokenizer@1` (Phase 7b)
+
+- **What:** CLIP's byte-pair tokenizer, from https://huggingface.co/openai/clip-vit-base-patch32. **Licence:** MIT. **SHA-256:** b556ac8c99757ffb677208af34bc8c6721572114111a6e0aaf5fa69ff0b8d842 · 2,224,041 bytes.
+
+## face-yunet-2026may.onnx — `yunet-2026may@1` (Phase 7b)
+
+- **What:** YuNet face detector (dynamic input), https://github.com/opencv/opencv_zoo/tree/main/models/face_detection_yunet. **Licence:** MIT (Shiqi Yu). **SHA-256:** ebafce4e3c118d6554634be5c27ab333b4c047a9a8c3faf1d7cf93101c22f0f0 · 229,738 bytes.
+
+## face-sface-2021dec.onnx — `sface-2021dec@1` (Phase 7b)
+
+- **What:** SFace face embedding (MobileFaceNet, 112×112 aligned → 128-d), https://github.com/opencv/opencv_zoo/tree/main/models/face_recognition_sface. **Licence:** Apache 2.0. **SHA-256:** 0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79 · 38,696,353 bytes.
+- **Excluded:** InsightFace's SCRFD and ArcFace weights — non-commercial research licences.
+
 ## Excluded
 
 - **madmom** beat/downbeat weights: CC BY-NC-SA (non-commercial) — fails §2.8.
